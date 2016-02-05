@@ -85,15 +85,22 @@ int main(int argc, char const *argv[])
 					}
 				}
 			}
-			int scoreJUG1,scoreJUG2;
+			int scoreJUG1,scoreJUG2,speedJUG1,speedJUG2;
 			scoreJUG1 = arraySTATSJUG[0][0]-arraySTATSJUG[1][1];
 			scoreJUG2 = arraySTATSJUG[1][0]-arraySTATSJUG[0][1];
+			speedJUG1= arraySTATSJUG[0][2];
+			speedJUG1= arraySTATSJUG[1][2];
 			if (scoreJUG1>scoreJUG2)
 			{
 				cout<<"Jugador 1 ganó!!! con "<<(scoreJUG1 - scoreJUG2)<<endl;
-			}else if (scoreJUG2>scoreJUG1)
-			{
+			}else if (scoreJUG2>scoreJUG1){
 				cout<<"Jugador 2 ganó!!! con "<<(scoreJUG2 - scoreJUG1)<<endl;
+			}else if ((scoreJUG2==scoreJUG1)&&(speedJUG1>speedJUG2)){
+				cout<<"Jugador 1 ganó!!! por velocidad con la diferencia de :"<<(speedJUG1-speedJUG2)<<endl;	
+			}else if ((scoreJUG2==scoreJUG1)&&(speedJUG1<speedJUG2)){
+				cout<<"Jugador 2 ganó!!! por velocidad con la diferencia de :"<<(speedJUG2-speedJUG1)<<endl;	
+			}else{
+				cout<<"Empate!!! :/ really guys "<<endl;
 			}
 		}else{
 			cout<<"Numero Inválido!!"<<endl;
