@@ -32,8 +32,7 @@ int main(int argc, char const *argv[])
 			srand(time(NULL));
 			int numeroAzar = rand()%1001-500;
 			cout<<numeroAzar<<endl;
-			do
-			{	
+			do{	
 				cout<<"Ingrese un Número"<<endl;
 				cin>>numeroIntentoMain;
 				numeroResultadoMain= ejercicio1RespIntentos(numeroIntentoMain,numeroAzar);
@@ -55,13 +54,13 @@ int main(int argc, char const *argv[])
 			}
 		}else if (respMEnMain ==2){
 			srand(time(NULL));
-			int numeroAzarATK = rand()%30+85;
-			int numeroAzarDEF = rand()%25+50;
-			int numeroAzarSPE = rand()%50+150;
 			//Llenar Matriz STATS
 			for (int i = 0; i < arraySTATSSizeMainFILAS; ++i){
-				for (int j = 0; j <arraySTATSSizeMainFILAS; ++j)
+				for (int j = 0; j <arraySTATSSizeMainCOL; ++j)
 				{
+					int numeroAzarATK = rand()%30+85;
+					int numeroAzarDEF = rand()%25+50;
+					int numeroAzarSPE = rand()%50+150;
 					if (j==0)
 					{
 						arraySTATS[i][j]= numeroAzarATK;
@@ -75,7 +74,7 @@ int main(int argc, char const *argv[])
 			//Llenar Matriz JUGADORES
 			for (int i = 0; i < arraySTATSJUGSizeMainFILAS; ++i){
 				for (int j = 0; j < arraySTATSJUGSizeMainCOL; ++j){
-					int numeroAzarASIG = rand()%3;
+					int numeroAzarASIG = rand()%4;
 					if (j==0)
 					{
 						arraySTATSJUG[i][j]=arraySTATS[numeroAzarASIG][0];
@@ -85,6 +84,16 @@ int main(int argc, char const *argv[])
 						arraySTATSJUG[i][j]=arraySTATS[numeroAzarASIG][2];
 					}
 				}
+			}
+			int scoreJUG1,scoreJUG2;
+			scoreJUG1 = arraySTATSJUG[0][0]-arraySTATSJUG[1][1];
+			scoreJUG2 = arraySTATSJUG[1][0]-arraySTATSJUG[0][1];
+			if (scoreJUG1>scoreJUG2)
+			{
+				cout<<"Jugador 1 ganó!!! con "<<(scoreJUG1 - scoreJUG2)<<endl;
+			}else if (scoreJUG2>scoreJUG1)
+			{
+				cout<<"Jugador 2 ganó!!! con "<<(scoreJUG2 - scoreJUG1)<<endl;
 			}
 		}else{
 			cout<<"Numero Inválido!!"<<endl;
@@ -117,7 +126,6 @@ int ejercicio1RespIntentos(int numIntento, int numeroAzar){
 		return 3;
 	}
 }
-
 void arrayOrdering(int arrayScoreFun[],int arrayIntentosSizeFun,int numeroScoreFun){
 	int numRempTmp, cambioNum=1;
 	for (int i = 0; (i < arrayIntentosSizeFun)&&cambioNum==1; ++i)
