@@ -58,7 +58,34 @@ int main(int argc, char const *argv[])
 			int numeroAzarATK = rand()%30+85;
 			int numeroAzarDEF = rand()%25+50;
 			int numeroAzarSPE = rand()%50+150;
-
+			//Llenar Matriz STATS
+			for (int i = 0; i < arraySTATSSizeMainFILAS; ++i){
+				for (int j = 0; j <arraySTATSSizeMainFILAS; ++j)
+				{
+					if (j==0)
+					{
+						arraySTATS[i][j]= numeroAzarATK;
+					}else if (j==1){
+						arraySTATS[i][j]=numeroAzarDEF;
+					}else if(j==(arraySTATSSizeMainCOL-1)){
+						arraySTATS[i][j]=numeroAzarSPE;
+					}
+				}
+			}
+			//Llenar Matriz JUGADORES
+			for (int i = 0; i < arraySTATSJUGSizeMainFILAS; ++i){
+				for (int j = 0; j < arraySTATSJUGSizeMainCOL; ++j){
+					int numeroAzarASIG = rand()%3;
+					if (j==0)
+					{
+						arraySTATSJUG[i][j]=arraySTATS[numeroAzarASIG][0];
+					}else if (j==1){
+						arraySTATSJUG[i][j]=arraySTATS[numeroAzarASIG][1];
+					}else if(j==2){
+						arraySTATSJUG[i][j]=arraySTATS[numeroAzarASIG][2];
+					}
+				}
+			}
 		}else{
 			cout<<"Numero Inválido!!"<<endl;
 		}
