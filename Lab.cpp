@@ -126,19 +126,19 @@ int main(int argc, char const *argv[])
 				scoreJUG2 = arraySTATSJUG[1][0]-arraySTATSJUG[0][1];
 				speedJUG1= arraySTATSJUG[0][2];
 				speedJUG1= arraySTATSJUG[1][2];
-					if (scoreJUG1>scoreJUG2){
-					cout<<"Jugador 1 ganó!!! con "<<(scoreJUG1 - scoreJUG2)<<" sin velocidad"<<endl;
-					}else if (scoreJUG2>scoreJUG1){
-						cout<<"Jugador 2 ganó!!! con "<<(scoreJUG2 - scoreJUG1)<<" sin velocidad"<<endl;
-					}else if ((scoreJUG2==scoreJUG1)&&(speedJUG1>speedJUG2)){
-						cout<<"Jugador 1 ganó!!! por velocidad con la diferencia de :"<<(speedJUG1-speedJUG2)<<endl;	
-					}else if ((scoreJUG2==scoreJUG1)&&(speedJUG1<speedJUG2)){
-						cout<<"Jugador 2 ganó!!! por velocidad con la diferencia de :"<<(speedJUG2-speedJUG1)<<endl;	
-					}else{
-						cout<<"Empate!!! :/ really guys "<<endl;
-					}
-					cout<<"CONTINUAR? [si-1/no-0] :"<<endl;
-					cin>>otraPelea;
+				if (scoreJUG1>scoreJUG2){
+				cout<<"Jugador 1 ganó!!! con "<<(scoreJUG1 - scoreJUG2)<<" sin velocidad"<<endl;
+				}else if (scoreJUG2>scoreJUG1){
+					cout<<"Jugador 2 ganó!!! con "<<(scoreJUG2 - scoreJUG1)<<" sin velocidad"<<endl;
+				}else if ((scoreJUG2==scoreJUG1)&&(speedJUG1>speedJUG2)){
+					cout<<"Jugador 1 ganó!!! por velocidad con la diferencia de :"<<(speedJUG1 - speedJUG2)<<endl;	
+				}else if ((scoreJUG2==scoreJUG1)&&(speedJUG2>speedJUG1)){
+					cout<<"Jugador 2 ganó!!! por velocidad con la diferencia de :"<<(speedJUG2 - speedJUG1)<<endl;	
+				}else{
+					cout<<"Empate!!! :/ really guys "<<endl;
+				}
+				cout<<"CONTINUAR? [si-1/no-0] :";
+				cin>>otraPelea;
 			} while (otraPelea !=0);
 		}else{
 			cout<<"Numero Inválido!!"<<endl;
